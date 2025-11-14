@@ -4,6 +4,7 @@ import { Stack } from 'expo-router';
 import { Asset } from 'expo-asset';
 import { View, ActivityIndicator } from 'react-native';
 
+
 export default function RootLayout() {
   const [ready, setReady] = useState(false);
 
@@ -44,6 +45,7 @@ export default function RootLayout() {
       <Stack.Screen name="reports" />
       <Stack.Screen name="profileView" />
       <Stack.Screen name="parkingMap" />
+      <Stack.Screen name="adminReportView"/>
     </Stack>
   );
 }

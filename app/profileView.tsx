@@ -1,10 +1,8 @@
 import React from 'react';
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { colors } from '../theme/colors';
+import { Image, ScrollView, Text, View } from 'react-native';
 import { Link } from 'expo-router';
-import { spacing } from '../theme/spacing';
-import { typography } from '../theme/typography';
 import Screen from '../components/ui/Screen';
+import { profileViewStyles as styles } from '../theme/styles'; 
 
 
 export default function RegisterScreen() {
@@ -35,51 +33,3 @@ export default function RegisterScreen() {
     </Screen>
   )
 }
-
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    paddingTop: spacing.xl,
-    paddingBottom: spacing.xxl,
-    flex: 1,
-  },
-  logo: {
-    width: 80,          
-    height: 50,
-    marginBottom: spacing.xl,
-  },
-  link: {
-    color: colors.primaryDark,
-    fontWeight: '600',
-    textDecorationLine: 'underline',
-  },
-  info: {
-    ...typography.h2,
-    textAlign: 'center',
-    color: colors.primaryMid,
-    marginBottom: spacing.xl,
-  },
-  title: {
-    ...typography.h2,
-    textAlign: 'center',
-    color: colors.text,
-    marginTop: spacing.xxl,
-    marginBottom: spacing.lg,
-  },
-  mascot: {
-    width: 170,
-    height: 170,
-    marginTop: spacing.xl,
-  },
-  avatarPlaceholder: {
-    width: 250,
-    height: 250,
-    borderRadius: 125,
-    backgroundColor: colors.surface,  
-    borderWidth: 1,
-    borderColor: colors.divider, 
-    marginBottom: spacing.xxl, 
-    marginTop: spacing.xl,  
-},
-});

@@ -1,11 +1,9 @@
 import React from 'react';
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { colors } from '../theme/colors';
-import { spacing } from '../theme/spacing';
-import { typography } from '../theme/typography';
 import Button from '../components/ui/Button';
 import Input from '../components/ui/Input';
 import Screen from '../components/ui/Screen';
+import { registerStyles as styles } from '../theme/styles'; 
 
 export default function RegisterScreen() {
   return (
@@ -44,35 +42,3 @@ export default function RegisterScreen() {
     </Screen>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    paddingTop: spacing.xl,
-    paddingBottom: spacing.xxl,
-  },
-  logo: {
-    width: 220,
-    height: 80,
-    marginBottom: spacing.xl,
-  },
-  title: {
-    ...typography.h2,
-    color: colors.text,
-    textAlign: 'center',
-    marginBottom: spacing.lg,
-  },
-  form: {
-    width: '85%',
-    marginBottom: spacing.lg,
-  },
-  button: {
-    width: '85%',
-    marginTop: spacing.sm,
-  },
-  mascot: {
-    width: 250,
-    height: 250,
-    marginTop: spacing.xl,
-  },
-});

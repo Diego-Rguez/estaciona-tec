@@ -4,10 +4,9 @@ import { Link } from 'expo-router';
 import { router } from 'expo-router';
 import Screen from '../components/ui/Screen';             
 import Input from '../components/ui/Input';
-import Button from '../components/ui/Button';
-import { colors } from '../theme/colors';                  
+import Button from '../components/ui/Button';               
 import { spacing } from '../theme/spacing';
-import { typography } from '../theme/typography';
+import { loginStyles as styles } from '../theme/styles'; 
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -73,44 +72,3 @@ export default function Login() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    paddingTop: spacing.xl,
-    paddingBottom: spacing.xxl,
-    flex: 1,
-  },
-  logo: {
-    width: 260,         
-    height: 90,
-    marginBottom: spacing.xl,
-  },
-  title: {
-    ...typography.h2,
-    textAlign: 'center',
-    color: colors.text,
-    marginBottom: spacing.lg,
-  },
-  form: {
-    width: '88%',        
-    marginBottom: spacing.md,
-  },
-  button: {
-    width: '88%',
-    marginTop: spacing.sm,
-  },
-  helper: {
-    marginTop: spacing.lg,
-    color: colors.muted,
-  },
-  link: {
-    color: colors.primaryDark,
-    fontWeight: '600',
-    textDecorationLine: 'underline',
-  },
-  mascot: {
-    width: 250,
-    height: 250,
-    marginTop: spacing.xl,
-  },
-});
