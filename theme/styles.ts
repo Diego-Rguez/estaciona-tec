@@ -391,3 +391,20 @@ export const reportsStyles = StyleSheet.create ({
     marginTop: spacing.md,
   },  
 })
+
+
+export const parkingMapStyles = StyleSheet.create({
+  wrapper: {
+    width: '100%',
+    aspectRatio: 1200 / 800, 
+    position: 'relative',
+    marginTop: 20,
+  },
+  spot: {
+    position: 'absolute',
+    width: 45,
+    height: 92,
+    borderRadius: 4,
+    opacity: 0.5,
+  },
+});

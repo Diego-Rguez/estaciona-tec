@@ -1,12 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { router, Link, usePathname } from 'expo-router';
 import { Pressable, Image, ScrollView, View } from 'react-native';
 import { mapViewStyles as styles } from '../theme/styles'; 
 import Screen from '../components/ui/Screen';
+import ParkingMap from '../components/ui/ParkingMap';
+
+
+type SpotId = 'A1' | 'A2' | 'A3';
+type SpotStatus = 'AVAILABLE' | 'OCCUPIED';
+type SpotsState = Record<SpotId, SpotStatus>;
 
 
 export default function mapView() {
   const pathname = usePathname();
+
+  const [spotsStatus, setSpotsStatus] = useState<SpotsState>({
+    A1: 'AVAILABLE',
+    A2: 'OCCUPIED',
+    A3: 'AVAILABLE',
+  });
+
+/*const handleSpotPress = (id: SpotId) => {
+  console.log('Click en spot', id);
+
+  setSpotsStatus(prev => ({
+    ...prev,
+    [id]: prev[id] === 'OCCUPIED' ? 'AVAILABLE' : 'OCCUPIED',
+  }));
+}; */ //Funcion que hace que al presionar el spot cambie de estado, es de prueba nomas
+
+
 
   return (
     <Screen>
@@ -45,8 +68,12 @@ export default function mapView() {
             </View>
           </View>
 
-          {/* Lienzo gris */}
-          <View style={styles.canvas} />
+          {/* Mapa interactivo */}
+          <ParkingMap 
+            spotsStatus={spotsStatus} 
+            //onSpotPress={handleSpotPress} Si quieres que se active la funcion de cambiar estado al presionar
+
+          />
 
           {/* Mascota y logo */}
           <Image
