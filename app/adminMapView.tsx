@@ -29,8 +29,6 @@ export default function mapView() {
   }));
 }; */ //Funcion que hace que al presionar el spot cambie de estado, es de prueba nomas
 
-
-
   return (
     <Screen>
       <ScrollView
