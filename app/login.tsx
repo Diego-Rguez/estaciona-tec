@@ -51,7 +51,7 @@ export default function Login() {
           {/* Botón Temporal */}
           <Button title="Continuar" onPress={() => router.push('/mapView')} style={styles.button} />       
           {/* Botón Temporal */}
-          <Button title="Analiticas" onPress={() => router.push('/adminAnalitics')} style={styles.button} />
+          <Button title="Admin View" onPress={() => router.push('/adminMapView')} style={styles.button} />
           {/* Link a Registro */}
           <Text style={styles.helper}>
             ¿No tienes cuenta?{' '}

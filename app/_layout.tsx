@@ -46,6 +46,7 @@ export default function RootLayout() {
       <Stack.Screen name="profileView" />
       <Stack.Screen name="parkingMap" />
       <Stack.Screen name="adminReportView"/>
+      <Stack.Screen name="adminMapView"/>      
     </Stack>
   );
 }

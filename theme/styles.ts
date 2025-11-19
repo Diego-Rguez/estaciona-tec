@@ -90,6 +90,11 @@ export const adminAnalyticsStyles = StyleSheet.create({
     marginBottom: spacing.xs,
     textAlign: 'left',
   },
+    link: {
+    color: colors.primaryDark,
+    fontWeight: '500',
+    textDecorationLine: 'underline',
+  },
 });
 
 export const loginStyles = StyleSheet.create({

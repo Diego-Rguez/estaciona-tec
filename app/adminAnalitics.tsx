@@ -20,20 +20,20 @@ export default function mapView() {
 
             <View style={styles.tabs}>
               <Link
-                href="/reports"
+                href="/adminReportView"
                 style={[
                   styles.tabUnselect,
-                  pathname?.includes('/reports') ? styles.activeTab : undefined,
+                  pathname?.includes('/adminReportView') ? styles.activeTab : undefined,
                 ]}
               >
                 Reportes
               </Link>
 
               <Link
-                href="/mapView"
+                href="/adminMapView"
                 style={[
                   styles.tabUnselect,
-                  pathname?.includes('/mapView') ? styles.activeTab : undefined,
+                  pathname?.includes('/adminMapView') ? styles.activeTab : undefined,
                 ]}
               >
                 Mapa
