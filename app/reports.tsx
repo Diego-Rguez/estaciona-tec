@@ -56,7 +56,23 @@ export default function RegisterScreen() {
             </Text>
 
             <TextInput
-              style={styles.textArea}
+              style={styles.textArea1}
+              placeholder="Numero de spot (opcional)"
+              placeholderTextColor={colors.muted}
+              value={reportText}
+              onChangeText={setReportText}
+              multiline
+              numberOfLines={5}
+              textAlignVertical="top"
+              autoCorrect
+              autoCapitalize="sentences"
+              maxLength={600}
+              returnKeyType="default"
+            />
+            
+
+            <TextInput
+              style={styles.textArea2}
               placeholder="Reporte"
               placeholderTextColor={colors.muted}
               value={reportText}

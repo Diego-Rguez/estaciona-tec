@@ -385,8 +385,19 @@ export const reportsStyles = StyleSheet.create ({
     padding: spacing.md,
     alignSelf: 'center',
   },
-  textArea: {
-    height: 140, // alto fijo
+  textArea2: {
+    height: 140,
+    backgroundColor: colors.surface,
+    borderRadius: 18,
+    padding: spacing.md,
+    color: colors.text,
+    borderWidth: 1,
+    borderColor: colors.divider,
+    marginTop: spacing.md,
+  },  
+
+  textArea1: {
+    height: 45,
     backgroundColor: colors.surface,
     borderRadius: 18,
     padding: spacing.md,
