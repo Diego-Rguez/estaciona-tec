@@ -95,6 +95,12 @@ export const adminAnalyticsStyles = StyleSheet.create({
     fontWeight: '500',
     textDecorationLine: 'underline',
   },
+  button: {
+    width: '65%',
+    marginTop: spacing.xxl,
+    padding: spacing.md,
+    alignSelf: 'center',
+  },
 });
 
 export const loginStyles = StyleSheet.create({
@@ -356,9 +362,9 @@ export const reportsStyles = StyleSheet.create ({
     marginTop: spacing.xxl,
   },
   mascot: {
-    width: 170,
-    height: 170,
-    marginTop: spacing.xl,
+    width: 120,
+    height: 120,
+    marginTop: spacing.xs,
   },
   logo: {
     width: 110,

@@ -2,6 +2,7 @@ import React from 'react';
 import { router, Link, usePathname } from 'expo-router';
 import { Pressable, Image, ScrollView, Text, View } from 'react-native';
 import Screen from '../components/ui/Screen';
+import Button from '../components/ui/Button';
 import { adminAnalyticsStyles as styles } from '../theme/styles'; 
 
 export default function mapView() {
@@ -60,7 +61,7 @@ export default function mapView() {
             <Text style={styles.title}>Descargar Reportes</Text>
             <Text style={styles.link}>Descargar</Text>
           </View>
-
+          <Button title="Reportar problema" onPress={() => router.push('/reports')} style={styles.button} />
           <Image
             source={require('../assets/logo-estacionatec.png')}
             style={styles.logo}
