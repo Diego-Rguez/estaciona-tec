@@ -14,6 +14,7 @@ type SpotsState = Record<SpotId, SpotStatus>;
 export default function mapView() {
   const pathname = usePathname();
 
+
   const [spotsStatus /*,setSpotsStatus Si activamos la funcion de cambiar status al presionar */] = useState<SpotsState>({
     A1: 'AVAILABLE',
     A2: 'OCCUPIED',
