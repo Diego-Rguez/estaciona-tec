@@ -8,6 +8,7 @@ import { reportsStyles as styles } from '../theme/styles';
 
 export default function RegisterScreen() {
   const [reportText, setReportText] = useState('');
+  const [spotNumText, setSpotNumText] = useState('');
   const pathname = usePathname(); // <-- hook dentro del componente
 
   return (
@@ -59,8 +60,8 @@ export default function RegisterScreen() {
               style={styles.textArea1}
               placeholder="Numero de spot (opcional)"
               placeholderTextColor={colors.muted}
-              value={reportText}
-              onChangeText={setReportText}
+              value={spotNumText}
+              onChangeText={setSpotNumText}
               multiline
               numberOfLines={5}
               textAlignVertical="top"
