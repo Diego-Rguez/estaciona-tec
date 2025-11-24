@@ -5,8 +5,8 @@ import ParkingMapSvg from '../../assets/parkingMapBase.svg';
 import { parkingMapStyles as styles } from '../../theme/styles';
 
 // ===== Tipos compartidos =====
-export type SpotId = 'A1' | 'A2' | 'A3';
-export type SpotStatus = 'AVAILABLE' | 'OCCUPIED';
+export type SpotId = '001' | '002' | '003';
+export type SpotStatus = 'available' | 'occupied';
 export type SpotsState = Record<SpotId, SpotStatus>;
 
 type SpotLayout = {
@@ -22,9 +22,9 @@ interface ParkingMapProps {
 
 // ===== Layout de spots =====
 const SPOTS_LAYOUT: SpotLayout[] = [
-  { id: 'A1', x: 0.512, y: 0.06},
-  { id: 'A2', x: 0.67, y: 0.06 },
-  { id: 'A3', x: 0.827, y: 0.056 },
+  { id: '001', x: 0.512, y: 0.06},
+  { id: '002', x: 0.67, y: 0.06 },
+  { id: '003', x: 0.827, y: 0.056 },
 ];
 
 export default function ParkingMap({ spotsStatus, onSpotPress }: ParkingMapProps) {
@@ -45,7 +45,7 @@ export default function ParkingMap({ spotsStatus, onSpotPress }: ParkingMapProps
 
       {size.width > 0 &&
         SPOTS_LAYOUT.map(spot => {
-          const occupied = spotsStatus[spot.id] === 'OCCUPIED';
+          const occupied = spotsStatus[spot.id] === 'occupied';
           const left = spot.x * size.width;
           const top = spot.y * size.height;
 

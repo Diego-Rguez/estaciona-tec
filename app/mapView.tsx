@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { router, Link, usePathname } from 'expo-router';
 import { Pressable, Image, ScrollView, View } from 'react-native';
 import { mapViewStyles as styles } from '../theme/styles'; 
@@ -6,19 +6,20 @@ import Screen from '../components/ui/Screen';
 import ParkingMap from '../components/ui/ParkingMap';
 
 
-type SpotId = 'A1' | 'A2' | 'A3';
-type SpotStatus = 'AVAILABLE' | 'OCCUPIED';
+type SpotId = '001' | '002' | '003';
+type SpotStatus = 'available' | 'occupied';
 type SpotsState = Record<SpotId, SpotStatus>;
 
+const API_URL = "http://192.168.0.199:5100/spots";
 
 export default function mapView() {
   const pathname = usePathname();
 
 
-  const [spotsStatus /*,setSpotsStatus Si activamos la funcion de cambiar status al presionar */] = useState<SpotsState>({
-    A1: 'AVAILABLE',
-    A2: 'OCCUPIED',
-    A3: 'AVAILABLE',
+  const [spotsStatus ,setSpotsStatus /* Si activamos la funcion de cambiar status al presionar */] = useState<SpotsState>({
+    '001': 'available',
+    '002': 'available',
+    '003': 'available',
   });
 
 /*const handleSpotPress = (id: SpotId) => {
@@ -30,7 +31,37 @@ export default function mapView() {
   }));
 }; */ //Funcion que hace que al presionar el spot cambie de estado, es de prueba nomas
 
+  useEffect(() => {
+    const fetchSpots = async () => {
+      try {
+        const res = await fetch(API_URL);
+        const data = await res.json(); 
 
+        const next: Partial<SpotsState> = {};
+
+        data.forEach((spot: { spot_num: string; status: SpotStatus }) => {
+          const id = spot.spot_num as SpotId;
+
+          if (['001', '002', '003'].includes(id)) {
+            next[id] = spot.status;
+          }
+        });
+
+        setSpotsStatus(prev => ({
+          ...prev,
+          ...next
+        }));
+      } catch (error) {
+        console.log("ERROR fetching spots:", error);
+      }
+    };
+
+    fetchSpots(); 
+
+    const interval = setInterval(fetchSpots, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <Screen>
