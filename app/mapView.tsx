@@ -10,7 +10,7 @@ type SpotId = '001' | '002' | '003';
 type SpotStatus = 'available' | 'occupied';
 type SpotsState = Record<SpotId, SpotStatus>;
 
-const API_URL = "http://192.168.0.199:5100/spots";
+const API_URL = "http://192.168.0.200:5100/spots";
 
 export default function mapView() {
   const pathname = usePathname();

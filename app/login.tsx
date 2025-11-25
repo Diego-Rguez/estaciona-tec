@@ -8,7 +8,7 @@ import { spacing } from '../theme/spacing';
 import { loginStyles as styles } from '../theme/styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const API_URL = 'http://192.168.0.199:5100/auth/login';
+const API_URL = 'http://192.168.0.200:5100/auth/login';
 
 export default function Login() {
   const [email, setEmail] = useState('');

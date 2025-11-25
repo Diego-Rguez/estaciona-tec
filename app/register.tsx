@@ -7,7 +7,7 @@ import { registerStyles as styles } from '../theme/styles';
 import { router } from 'expo-router';
 
 
-const API_URL = "http://192.168.0.199:5100/auth/register";
+const API_URL = "http://192.168.0.200:5100/auth/register";
 
 export default function RegisterScreen() {
 

@@ -102,39 +102,11 @@ export default function ReportsScreen() {
             <Pressable onPress={() => router.push('/profileView')} hitSlop={12}>
               <View style={styles.avatarPlaceholder} />
             </Pressable>
-
-            {/* Tabs navegables */}
-            <View style={styles.tabs}>
-              <Link
-                href="/reports"
-                style={[
-                  styles.tabUnselect,
-                  pathname?.includes('/reports') ? styles.activeTab : undefined,
-                ]}
-              >
-                Reportes
-              </Link>
-
-              <Link
-                href="/mapView"
-                style={[
-                  styles.tabUnselect,
-                  pathname?.includes('/mapView') ? styles.activeTab : undefined,
-                ]}
-              >
-                Mapa
-              </Link>
-            </View>
           </View>
 
           {/* Card */}
           <View style={styles.card}>
             <Text style={styles.title}>Generar Reporte</Text>
-            <Text style={styles.description}>
-              ¡Ups! Parece que algo no salió bien. Cuéntanos qué pasó para que podamos
-              mejorar tu experiencia en EstacionaTEC.
-            </Text>
-
             <TextInput
               style={styles.textArea1}
               placeholder="Número de spot (opcional)"
@@ -168,6 +140,11 @@ export default function ReportsScreen() {
             <Button 
               title="Enviar" 
               onPress={handleSendReport} 
+              style={styles.button} 
+            />
+            <Button 
+              title="Regresar" 
+              onPress={() => router.push("/adminReportView")} 
               style={styles.button} 
             />
           </View>

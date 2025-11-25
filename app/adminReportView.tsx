@@ -61,7 +61,7 @@ export default function mapView() {
             <Text style={styles.title}>Descargar Reportes</Text>
             <Text style={styles.link}>Descargar</Text>
           </View>
-          <Button title="Reportar problema" onPress={() => router.push('/reports')} style={styles.button} />
+          <Button title="Reportar problema" onPress={() => router.push('/reportsAdmin')} style={styles.button} />
           <Image
             source={require('../assets/logo-estacionatec.png')}
             style={styles.logo}
