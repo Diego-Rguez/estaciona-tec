@@ -3,10 +3,11 @@ import { router, Link, usePathname } from 'expo-router';
 import { Pressable, Image, ScrollView, Text, View } from 'react-native';
 import Screen from '../components/ui/Screen';
 import Button from '../components/ui/Button';
-import { adminAnalyticsStyles as styles } from '../theme/styles'; 
+import { adminAnalyticsStyles as styles } from '../theme/styles';
+import { API_BASE_URL } from '../config/api';
 
-// 👇 Ruta de tu API (NO la cambié)
-const API_URL = "http://192.168.0.200:5100/reports";
+
+const API_URL = `${API_BASE_URL}/reports`;
 
 export default function AdminAnalytics() {
   const pathname = usePathname();

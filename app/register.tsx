@@ -5,9 +5,10 @@ import Input from '../components/ui/Input';
 import Screen from '../components/ui/Screen';
 import { registerStyles as styles } from '../theme/styles'; 
 import { router } from 'expo-router';
+import { API_BASE_URL } from '../config/api';
 
 
-const API_URL = "http://192.168.0.200:5100/auth/register";
+const API_URL = `${API_BASE_URL}/auth/register`;
 
 export default function RegisterScreen() {
 

@@ -6,9 +6,10 @@ import Button from '../components/ui/Button';
 import Screen from '../components/ui/Screen';
 import { reportsStyles as styles } from '../theme/styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { API_BASE_URL } from '../config/api';
 
-// Usa la misma IP que login/register/spots
-const API_URL = "http://192.168.0.200:5100/reports";
+
+const API_URL = `${API_BASE_URL}/reports`;
 
 type StoredUser = {
   id: string;
