@@ -29,7 +29,7 @@ export default function ProfileScreen() {
           onPress={() => router.back()} 
           style={{ position: 'absolute', left: 20, top: 40, zIndex: 50 }}
         >
-        <Text style={{ fontSize: 25 }}>←</Text>
+        <Text style={{ fontSize: 25, color: '#0F64A6' }}>←</Text>
         </Pressable>
 
         <Text style={styles.title}>Perfil</Text>
