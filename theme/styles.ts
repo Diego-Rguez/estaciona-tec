@@ -101,6 +101,29 @@ export const adminAnalyticsStyles = StyleSheet.create({
     padding: spacing.md,
     alignSelf: 'center',
   },
+  reportItem: {
+    marginTop: spacing.md,
+    paddingVertical: spacing.sm,
+    borderTopWidth: 1,
+    borderColor: colors.divider,
+  },
+  reportTitle: {
+    ...typography.body,
+    fontWeight: '600',
+    color: colors.text,
+    marginBottom: spacing.xs,
+  },
+  reportDescription: {
+    ...typography.caption,
+    color: colors.text,
+    marginBottom: spacing.xs,
+  },
+  reportMeta: {
+    ...typography.caption,
+    color: colors.muted,
+    fontSize: 12,
+    marginBottom: spacing.xs,
+  },
 });
 
 export const loginStyles = StyleSheet.create({
