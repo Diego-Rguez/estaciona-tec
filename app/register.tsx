@@ -4,7 +4,7 @@ import Button from '../components/ui/Button';
 import Input from '../components/ui/Input';
 import Screen from '../components/ui/Screen';
 import { registerStyles as styles } from '../theme/styles'; 
-import { router } from 'expo-router';
+import { router, Link } from 'expo-router';
 import { API_BASE_URL } from '../config/api';
 
 
@@ -90,6 +90,13 @@ export default function RegisterScreen() {
           onPress={handleRegister}
           style={styles.button}
         />
+          {/* Link a Registro */}
+          <Text style={styles.helper}>
+            ¿Ya tienes cuenta?{' '}
+            <Link href="/login" style={styles.link}>
+              Inicia Sesión
+            </Link>
+          </Text>        
 
         <Image
           source={require('../assets/borregoSaluda.png')}

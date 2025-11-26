@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Image, ScrollView, Text, View } from 'react-native';
-import { Link } from 'expo-router';
+import { Image, ScrollView, Text, View, Pressable } from 'react-native';
+import { Link, router } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Screen from '../components/ui/Screen';
 import { profileViewStyles as styles } from '../theme/styles'; 
@@ -25,6 +25,12 @@ export default function ProfileScreen() {
         contentContainerStyle={styles.container}
         showsVerticalScrollIndicator={false}
       >
+        <Pressable 
+          onPress={() => router.back()} 
+          style={{ position: 'absolute', left: 20, top: 40, zIndex: 50 }}
+        >
+        <Text style={{ fontSize: 25 }}>←</Text>
+        </Pressable>
 
         <Text style={styles.title}>Perfil</Text>
 

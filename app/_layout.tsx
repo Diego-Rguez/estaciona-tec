@@ -38,7 +38,7 @@ export default function RootLayout() {
   }
 
   return (
-    <Stack screenOptions={{ headerShown: false }}>
+    <Stack screenOptions={{ headerShown: false, animation: 'fade_from_bottom', gestureEnabled: false }}>
       <Stack.Screen name="index" />
       <Stack.Screen name="login" />
       <Stack.Screen name="mapView" />
@@ -47,7 +47,8 @@ export default function RootLayout() {
       <Stack.Screen name="parkingMap" />
       <Stack.Screen name="adminReportView"/>
       <Stack.Screen name="adminMapView"/>
-      <Stack.Screen name="reportsAdmin"/>      
+      <Stack.Screen name="reportsAdmin"/>   
+      <Stack.Screen name="historialReportes"/>    
     </Stack>
   );
 }

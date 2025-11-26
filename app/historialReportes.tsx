@@ -41,7 +41,7 @@ export default function AdminAnalytics() {
 
         // Filtramos solo los reportes con status "pending"
         const pendings: Report[] = data.filter(
-          (report: Report) => report.status === "pending"
+          (report: Report) => report.status === "resolved"
         );
 
         setPendingReports(pendings);
@@ -60,33 +60,6 @@ export default function AdminAnalytics() {
 
   }, []);
 
-  // Cambiamos el status de un reporte a "resolved" y lo sacamos de la lista
-  const resolveReport = async (id: string) => {
-    try {
-      const res = await fetch(`${API_URL}/${id}/status`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ status: "resolved" }),
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        console.log("Error al actualizar estado:", data);
-        return;
-      }
-
-      // Quitamos el reporte resuelto del estado local
-      setPendingReports(prev => prev.filter(report => report._id !== id));
-
-      // Bajamos el contador
-      setPendingCount(prev => Math.max(prev - 1, 0));
-
-    } catch (error) {
-      console.log("Error resolviendo reporte:", error);
-    }
-  };
-
   return (
     <Screen>
       <ScrollView
@@ -100,53 +73,15 @@ export default function AdminAnalytics() {
             <Pressable onPress={() => router.push('/profileView')} hitSlop={12}>
               <View style={styles.avatarPlaceholder} />
             </Pressable>
-
-            <View style={styles.tabs}>
-              <Link
-                href="/adminReportView"
-                style={[
-                  styles.tabUnselect,
-                  pathname?.includes('/adminReportView') ? styles.activeTab : undefined,
-                ]}
-              >
-                Reportes
-              </Link>
-
-              <Link
-                href="/adminMapView"
-                style={[
-                  styles.tabUnselect,
-                  pathname?.includes('/adminMapView') ? styles.activeTab : undefined,
-                ]}
-              >
-                Mapa
-              </Link>
-
-              <Link
-                href="/adminAnalitics"
-                style={[
-                  styles.tabUnselect,
-                  pathname?.includes('/adminAnalitics') ? styles.activeTab : undefined,
-                ]}
-              >
-                Analiticas
-              </Link>
-            </View>
-          </View>
-
-          {/* Reportes por atender */}
-          <View style={styles.card}>
-            <Text style={styles.title}>Reportes por atender:</Text>
-            <Text style={styles.description}>{pendingCount}</Text>
           </View>
 
           {/* Mostrar todos los reportes con status pending */}
           <View style={styles.card}>
-            <Text style={styles.title}>Detalle de reportes pendientes</Text>
+            <Text style={styles.title}>Historial de reportes</Text>
 
             {pendingReports.length === 0 ? (
               <Text style={styles.description}>
-                No hay reportes pendientes.
+                No hay ningun reporte en el historial.
               </Text>
             ) : (
               pendingReports.map((report) => (
@@ -170,27 +105,15 @@ export default function AdminAnalytics() {
                       Fecha: {new Date(report.createdAt).toLocaleString()}
                     </Text>
                   )}
-
-                  {/* Botón para marcar como resuelto */}
-                  <Button
-                    title="Marcar como resuelto"
-                    onPress={() => resolveReport(report._id)}
-                    style={{ marginTop: 8 }}
-                  />
                 </View>
               ))
             )}
           </View>
 
-          <Button 
-            title="Reportar problema" 
-            onPress={() => router.push('/reportsAdmin')} 
+        <Button 
+            title="Regresar" 
+            onPress={() => router.push('/adminReportView')} 
             style={styles.button} 
-          />
-          <Button 
-            title="Ver historial de reportes" 
-            onPress={() => router.push('/historialReportes')} 
-            style={styles.button2} 
           />
 
           <Image
@@ -203,3 +126,4 @@ export default function AdminAnalytics() {
     </Screen>
   );
 }
+

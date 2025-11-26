@@ -97,7 +97,13 @@ export const adminAnalyticsStyles = StyleSheet.create({
   },
   button: {
     width: '65%',
-    marginTop: spacing.xxl,
+    marginTop: spacing.xl,
+    padding: spacing.md,
+    alignSelf: 'center',
+  },
+  button2: {
+    width: '65%',
+    marginTop: spacing.xs,
     padding: spacing.md,
     alignSelf: 'center',
   },
@@ -318,6 +324,15 @@ export const registerStyles = StyleSheet.create ({
     height: 250,
     marginTop: spacing.xl,
   },
+  helper: {
+    marginTop: spacing.lg,
+    color: colors.muted,
+  },
+  link: {
+    color: colors.primaryDark,
+    fontWeight: '600',
+    textDecorationLine: 'underline',
+  }, 
 })
 
 export const reportsStyles = StyleSheet.create ({
@@ -434,7 +449,7 @@ export const reportsStyles = StyleSheet.create ({
     borderWidth: 1,
     borderColor: colors.divider,
     marginTop: spacing.md,
-  },  
+  }, 
 })
 
 
