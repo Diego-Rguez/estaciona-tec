@@ -58,7 +58,7 @@ export default function mapView() {
 
     fetchSpots(); 
 
-    const interval = setInterval(fetchSpots, 2000);
+    const interval = setInterval(fetchSpots, 1000);
 
     return () => clearInterval(interval);
   }, []);
@@ -105,6 +105,11 @@ export default function mapView() {
             spotsStatus={spotsStatus} 
             //onSpotPress={handleSpotPress} Si quieres que se active la funcion de cambiar estado al presionar
 
+          />
+          <Image
+            source={require('../assets/mapaLeyendas.png')}
+            style={styles.leyendas}
+            resizeMode="contain"
           />
 
           {/* Mascota y logo */}

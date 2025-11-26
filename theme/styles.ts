@@ -130,6 +130,12 @@ export const adminAnalyticsStyles = StyleSheet.create({
     fontSize: 12,
     marginBottom: spacing.xs,
   },
+ leyendas: {
+    width: 320,
+    height: 60,
+    alignSelf: 'center',
+    marginTop: 0,
+ }
 });
 
 export const loginStyles = StyleSheet.create({
@@ -245,6 +251,12 @@ export const mapViewStyles = StyleSheet.create ({
     height: 40,
     marginBottom: spacing.xxl,
   },  
+ leyendas: {
+    width: 320,
+    height: 60,
+    alignSelf: 'center',
+    marginTop: 0,
+ }
 })
 
 export const profileViewStyles = StyleSheet.create ({
