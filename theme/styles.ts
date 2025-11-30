@@ -135,7 +135,16 @@ export const adminAnalyticsStyles = StyleSheet.create({
     height: 60,
     alignSelf: 'center',
     marginTop: 0,
- }
+ },
+ screenTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#000',
+    marginLeft: 10,
+    letterSpacing: 0.5,
+},
+
+
 });
 
 export const loginStyles = StyleSheet.create({
@@ -478,5 +487,45 @@ export const parkingMapStyles = StyleSheet.create({
     height: 92,
     borderRadius: 4,
     opacity: 0.5,
+  },
+});
+
+export const layoutStyles = StyleSheet.create({
+  badBanner: {
+    position: "absolute",
+    top: 40,           // ajusta según notch / status bar
+    left: 16,
+    right: 16,
+    zIndex: 999,
+    backgroundColor: "#FFE8E8",
+    borderRadius: 16,
+    paddingVertical: 10,
+    paddingHorizontal: 14,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowOffset: { width: 0, height: 4 },
+    shadowRadius: 8,
+    elevation: 5,
+  },
+  badBannerText: {
+    flex: 1,
+    color: "#B00020",
+    fontSize: 14,
+    fontWeight: "500",
+    marginRight: 12,
+  },
+  badBannerButton: {
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    backgroundColor: "#0071CE",
+    borderRadius: 12,
+  },
+  badBannerButtonText: {
+    color: "#fff",
+    fontWeight: "600",
+    fontSize: 13,
   },
 });

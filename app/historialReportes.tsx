@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { router, Link, usePathname } from 'expo-router';
+import { router, usePathname } from 'expo-router';
 import { Pressable, Image, ScrollView, Text, View } from 'react-native';
 import Screen from '../components/ui/Screen';
 import Button from '../components/ui/Button';

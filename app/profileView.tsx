@@ -8,6 +8,10 @@ import { profileViewStyles as styles } from '../theme/styles';
 export default function ProfileScreen() {
 
   const [user, setUser] = useState<{ email: string; name: string } | null>(null);
+  const handleLogout = async () => {
+  await AsyncStorage.removeItem("user");
+  router.replace("/login");
+};
 
   useEffect(() => {
     const loadUser = async () => {
@@ -46,9 +50,10 @@ export default function ProfileScreen() {
           {user?.name ?? "Cargando nombre..."}
         </Text>
 
-        <Link href="/login" style={styles.link}>
-          Cerrar Sesión
-        </Link>
+        <Pressable onPress={handleLogout}>
+          <Text style={styles.link}>Cerrar Sesión</Text>
+        </Pressable>
+
 
         <Image
           source={require('../assets/borregoLike.png')}

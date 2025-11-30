@@ -134,12 +134,6 @@ export default function AdminAnalytics() {
             </View>
           </View>
 
-          {/* Reportes por atender */}
-          <View style={styles.card}>
-            <Text style={styles.title}>Reportes por atender:</Text>
-            <Text style={styles.description}>{pendingCount}</Text>
-          </View>
-
           {/* Mostrar todos los reportes con status pending */}
           <View style={styles.card}>
             <Text style={styles.title}>Detalle de reportes pendientes</Text>
