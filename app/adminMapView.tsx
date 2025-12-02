@@ -8,7 +8,7 @@ import { API_BASE_URL } from '../config/api';
 
 
 type SpotId = '001' | '002' | '003';
-type SpotStatus = 'available' | 'occupied';
+type SpotStatus = 'available' | 'occupied' | 'blocked';
 type SpotsState = Record<SpotId, SpotStatus>;
 
 const API_URL = `${API_BASE_URL}/spots`;

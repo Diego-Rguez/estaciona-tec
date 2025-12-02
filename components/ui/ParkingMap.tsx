@@ -6,7 +6,7 @@ import { parkingMapStyles as styles } from '../../theme/styles';
 
 // ===== Tipos compartidos =====
 export type SpotId = '001' | '002' | '003';
-export type SpotStatus = 'available' | 'occupied';
+export type SpotStatus = 'available' | 'occupied' | 'blocked';
 export type SpotsState = Record<SpotId, SpotStatus>;
 
 type SpotLayout = {
@@ -58,7 +58,12 @@ export default function ParkingMap({ spotsStatus, onSpotPress }: ParkingMapProps
                 {
                   left,
                   top,
-                  backgroundColor: occupied ? '#EF4444' : '#22C55E',
+                  backgroundColor:
+                    spotsStatus[spot.id] === 'blocked'
+                      ? '#5f5a64ff' 
+                      : spotsStatus[spot.id] === 'occupied'
+                      ? '#EF4444' 
+                      : '#22C55E',
                 },
               ]}
             />

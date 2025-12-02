@@ -252,21 +252,21 @@ export default function AdminAnalytics() {
                     population: statusCount.available,
                     color: '#adacb7ff',
                     legendFontColor: '#333',
-                    legendFontSize: 9,
+                    legendFontSize: 8,
                   },
                   {
                     name: 'Ocupados',
                     population: statusCount.occupied,
                     color: colors.primary,
                     legendFontColor: '#333',
-                    legendFontSize: 9,
+                    legendFontSize: 8,
                   },
                   {
                     name: 'Bloqueados',
                     population: statusCount.blocked ?? 0,
                     color: '#CCCCCC',
                     legendFontColor: '#333',
-                    legendFontSize: 12,
+                    legendFontSize: 8,
                   },
                 ].filter(d => d.population > 0)}
                 width={screenWidth * 0.85}

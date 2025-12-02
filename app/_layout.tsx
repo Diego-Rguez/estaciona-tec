@@ -1,12 +1,13 @@
 // app/_layout.tsx
 import React, { useEffect, useState, useRef } from 'react';
-import { Stack, useRouter } from 'expo-router';
+import { Stack } from 'expo-router';
 import { Asset } from 'expo-asset';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { API_BASE_URL } from '../config/api';
 import { View, ActivityIndicator, Text, Pressable} from "react-native";
 import { router } from "expo-router";
 import { layoutStyles as styles } from '../theme/styles';
+
 
 const BAD_PARKING_URL = `${API_BASE_URL}/stats/bad-parking-spots`;
 
@@ -47,10 +48,7 @@ export default function RootLayout() {
   return () => clearInterval(intervalId);
 }, []);
 
-
-  // =====================
   // PRELOAD DE LAS IMAGENES PARA UNA FLUIDEZ VISUAL
-  // =====================
   useEffect(() => {
     async function preloadAssets() {
       try {
@@ -72,10 +70,8 @@ export default function RootLayout() {
     preloadAssets();
   }, []);
 
-  // =============================
   // ALERTA GLOBAL: BAD PARKING
   // SOLO PARA ADMIN
-  // =============================
 useEffect(() => {
   if (!ready) return;
 
