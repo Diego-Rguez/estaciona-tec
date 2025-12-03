@@ -59,6 +59,7 @@ export default function RootLayout() {
           require('../assets/borregoLike.png'),
           require('../assets/borregoSaluda.png'),
           require('../assets/borregoTelefono.png'),
+          require('../assets/mapaLeyendas.png'),
         ]);
       } catch (e) {
         console.warn('Error precargando imágenes', e);
