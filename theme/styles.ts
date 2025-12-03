@@ -258,11 +258,12 @@ export const mapViewStyles = StyleSheet.create ({
   logo: {
     width: 110,
     height: 40,
+    alignSelf: 'center',
     marginBottom: spacing.xxl,
   },  
  leyendas: {
-    width: 320,
-    height: 60,
+    width: 420,
+    height: 170,
     alignSelf: 'center',
     marginTop: 0,
  }
