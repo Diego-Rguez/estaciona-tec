@@ -59,6 +59,8 @@ export default function mapView() {
       <ScrollView
         contentContainerStyle={styles.container}
         showsVerticalScrollIndicator={false}
+        maximumZoomScale={4}
+        minimumZoomScale={1}
       >
         <View style={styles.container}>
           {/* Header */}
