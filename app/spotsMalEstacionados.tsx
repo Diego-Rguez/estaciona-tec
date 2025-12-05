@@ -5,12 +5,11 @@ import Screen from '../components/ui/Screen';
 import Button from '../components/ui/Button';
 import { adminAnalyticsStyles as styles } from '../theme/styles';
 import { API_BASE_URL } from '../config/api';
-import { Alert } from 'react-native';
 
 const STATS_BASE_URL = `${API_BASE_URL}/stats`;
 const BAD_PARKING_URL = `${STATS_BASE_URL}/bad-parking-spots`;
 
-// Tipo base (ajústalo si tu API regresa más campos)
+// Tipo base 
 type BadSpot = {
   _id?: string;
   spot_num?: string;
@@ -49,8 +48,7 @@ export default function SpotsMalEstacionados() {
 
     fetchBadSpots();
 
-    // Opcional: refrescar cada X segundos
-    const intervalId = setInterval(fetchBadSpots, 5000);
+    const intervalId = setInterval(fetchBadSpots, 3000);
     return () => clearInterval(intervalId);
   }, []);
 

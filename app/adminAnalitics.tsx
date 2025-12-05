@@ -142,7 +142,7 @@ export default function AdminAnalytics() {
         const res4 = await fetch(PEAK_HOURS_URL);
         const data4 = await res4.json();
         console.log('PEAK_HOURS response:', data4);
-        // Tu backend actual: [{ "_id": { "hour": 14 }, "entries": 78 }, ...]
+        
         const peakPoints: PeakItem[] = (data4 || []).map((d: any, idx: number) => {
           const hourNumber = d.hour ?? d._id?.hour;
           const hourLabel =

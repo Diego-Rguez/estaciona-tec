@@ -17,7 +17,6 @@ type EventItem = {
   event_type?: string;
   createdAt?: string;
   timestamp?: string;
-  // cualquier otro campo que tenga tu schema…
 };
 
 export default function EventosDia() {

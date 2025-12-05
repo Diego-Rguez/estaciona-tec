@@ -16,20 +16,12 @@ const API_URL = `${API_BASE_URL}/spots`;
 export default function mapView() {
   const pathname = usePathname();
 
-  const [spotsStatus ,setSpotsStatus /* Si activamos la funcion de cambiar status al presionar */] = useState<SpotsState>({
+  const [spotsStatus ,setSpotsStatus] = useState<SpotsState>({
     '001': 'available',
     '002': 'available',
     '003': 'available',
   });
 
-/*const handleSpotPress = (id: SpotId) => {
-  console.log('Click en spot', id);
-
-  setSpotsStatus(prev => ({
-    ...prev,
-    [id]: prev[id] === 'OCCUPIED' ? 'AVAILABLE' : 'OCCUPIED',
-  }));
-}; */ //Funcion que hace que al presionar el spot cambie de estado, es de prueba nomas
 
 
   useEffect(() => {

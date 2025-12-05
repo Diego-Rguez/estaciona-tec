@@ -6,19 +6,17 @@ import { adminAnalyticsStyles as styles } from '../theme/styles';
 import { API_BASE_URL } from '../config/api';
 import Button from '../components/ui/Button';
 
-const screenWidth = Dimensions.get('window').width;
-
 const STATS_BASE_URL = `${API_BASE_URL}/stats`;
 const EVENTS_BY_DAY_URL = `${STATS_BASE_URL}/events-by-day`;
 
 // Un día de eventos
 type EventDay = {
-  label: string;   // lo que se muestra: 28/11
-  value: number;   // número de eventos
-  dateKey: string; // clave para filtrar: 2025-11-28
+  label: string;   
+  value: number;   
+  dateKey: string; 
 };
 
-// 🔹 Formatea label visible
+// Formatea label visible
 const formatEventDayLabel = (d: any): string => {
   const raw = d.date ?? d._id ?? d.day;
 
@@ -44,9 +42,9 @@ const formatEventDayLabel = (d: any): string => {
   return '?';
 };
 
-// 🔹 Genera clave YYYY-MM-DD para filtrar eventos
+//  Genera clave YYYY-MM-DD para filtrar eventos
 const buildDateKey = (d: any): string => {
-  // Caso: ya viene un string tipo 2025-11-28
+
   if (typeof d.date === 'string') {
     return d.date.slice(0, 10);
   }
@@ -62,11 +60,11 @@ const buildDateKey = (d: any): string => {
       const yy = String(year);
       const mm = String(month).padStart(2, '0');
       const dd = String(day).padStart(2, '0');
-      return `${yy}-${mm}-${dd}`;  // 2025-11-28
+      return `${yy}-${mm}-${dd}`;  
     }
   }
 
-  return ''; // fallback
+  return ''; 
 };
 
 export default function HistorialEventos() {
