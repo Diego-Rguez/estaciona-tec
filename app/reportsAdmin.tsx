@@ -21,7 +21,6 @@ export default function ReportsScreen() {
   const [reportText, setReportText] = useState('');
   const [spotNumText, setSpotNumText] = useState('');
   const [user, setUser] = useState<StoredUser | null>(null);
-  const pathname = usePathname();
 
   // Cargar usuario desde AsyncStorage
   useEffect(() => {
